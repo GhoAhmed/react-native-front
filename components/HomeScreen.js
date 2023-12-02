@@ -1,32 +1,17 @@
+// src/components/HomeScreen.js
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import NavBar from './NavBar';
-import Footer from './Footer';
-import MainContent from './MainContent';
+import { View, Text, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+const HomeScreen = () => {
+  const navigation = useNavigation();
 
-export default function Home() {
   return (
-    <View style={styles.container}>
-      {/* Navbar */}
-      <NavBar />
-
-      {/* Main Content */}
-      <MainContent />
-
-      
-      {/* Footer */}
-      <Footer />
-
-      
+    <View>
+      <Text>Home Screen</Text>
+      <Button title="Go to Details" onPress={() => navigation.navigate('Details')} />
     </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default HomeScreen;
